@@ -12,6 +12,7 @@ return new class extends Migration {
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('role_id')->constrained();
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
@@ -26,7 +27,6 @@ return new class extends Migration {
             $table->integer('time');
             $table->decimal('total_payments', 8, 2);
             $table->decimal('weekly_pay', 8, 2);
-            $table->rememberToken();
             $table->timestamps();
         });
     }

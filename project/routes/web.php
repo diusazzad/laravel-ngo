@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\NgoController;
 use App\Http\Controllers\TestController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 
@@ -25,6 +26,11 @@ Route::resource('/admin/members', MemberController::class);
 
 // Route::get('/ngos', [NgoController::class, 'index'])->name('ngos.index');
 // Route::get('/ngos/create', [NgoController::class, 'create'])->name('ngos.create');
-Route::get('/loanindex',[TestController::class,'showLoanCalculationForm'])->name('loanCalculation');
-Route::get('/loancreate',[TestController::class,'loanCalculation'])->name('loancalculation');
+Route::get('/loanindex', [TestController::class, 'showLoanCalculationForm'])->name('loanCalculation');
+Route::get('/loancreate', [TestController::class, 'loanCalculation'])->name('loancalculation');
 
+
+
+Route::get('/admin', function () {
+    // Only admin users may access this route...
+})->middleware('role:admin');

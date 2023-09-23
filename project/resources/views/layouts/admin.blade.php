@@ -15,7 +15,9 @@
             <h2 class="mb-6 text-2xl font-semibold">Admin Panel</h2>
             <ul>
                 <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Home</a></li>
-                <li><a href="{{ route("members.index") }}" class="block py-2 text-gray-700 hover:text-blue-500">New Member</a></li>
+                {{-- <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Home</a></li> --}}
+                {{-- <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Home</a></li> --}}
+                <li><a href="{{ route("members.index") }}" class="block py-2 text-gray-700 hover:text-blue-500">Employee Add</a></li>
                 <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">NGO Calculation</a></li>
                 <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Loan Disburse</a></li>
                 <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Collection/Return</a></li>
