@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 class NgoController extends Controller
 {
+    
     public function index()
     {
         $ngos = Ngo::all(); // Retrieve all NGO records

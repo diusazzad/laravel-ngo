@@ -1,3 +1,6 @@
+@extends('layouts.app')
+@section('content')
+
 <table class="min-w-full divide-y divide-gray-200">
     <thead class="bg-gray-50">
         <tr>
@@ -16,20 +19,22 @@
         </tr>
     </thead>
     <tbody class="bg-white divide-y divide-gray-200">
-        @foreach ($users as $user)
+
         <tr>
-            <td class="px-6 py-4 whitespace-nowrap">{{ $user->si_no }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ $user->name }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ $user->father }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ $user->mother }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ $user->address }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ $user->ac_no }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ $user->loan }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ $user->interest }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ $user->time }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ $user->total_payments }}</td>
-            <td class="px-6 py-4 whitespace-nowrap">{{ $user->weekly_pay }}</td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
+            <td class="px-6 py-4 whitespace-nowrap"></td>
         </tr>
-        @endforeach
+
     </tbody>
 </table>
+
+@endsection

@@ -25,3 +25,6 @@ Route::resource('/admin/members', MemberController::class);
 
 // Route::get('/ngos', [NgoController::class, 'index'])->name('ngos.index');
 // Route::get('/ngos/create', [NgoController::class, 'create'])->name('ngos.create');
+Route::get('/loanindex',[TestController::class,'showLoanCalculationForm'])->name('loanCalculation');
+Route::get('/loancreate',[TestController::class,'loanCalculation'])->name('loancalculation');
+
