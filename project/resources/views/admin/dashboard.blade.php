@@ -7,11 +7,20 @@
         <h2 class="mb-6 text-2xl font-semibold">Admin Panel</h2>
         <ul>
             <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Home</a></li>
-            <li><a href="{{ route('members.index') }}" class="block py-2 text-gray-700 hover:text-blue-500">New
+            <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">New
                     Member</a></li>
             <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Loan Disburse</a></li>
             <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Collection/Return</a></li>
             <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Interest</a></li>
+            <li class="mb-2">
+                <a href="{{ route('logout') }}" class="block py-2 text-gray-700 hover:text-blue-500"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    Log Out
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </li>
         </ul>
     </div>
 
