@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -27,8 +28,9 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            // Hash the password
             'password' => Hash::make($request->password),
+            'role_id' => 1,
+            // Assign a default role to the user
         ]);
 
         // Sign the user in
@@ -37,4 +39,5 @@ class RegisterController extends Controller
         // Redirect to the home page
         return redirect()->route('home');
     }
+
 }
