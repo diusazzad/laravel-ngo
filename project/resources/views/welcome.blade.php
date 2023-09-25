@@ -6,4 +6,5 @@
 @include('partials.home.calculate')
 @include('partials.home.about')
 @include('partials.home.progam')
+@include('partials.home.footer')
 @endsection

@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class AdminController extends Controller
+class SocityController extends Controller
 {
-    public function dashboard()
+    public function socity()
     {
         // Get the authenticated user
         $user = Auth::user();
@@ -19,8 +19,6 @@ class AdminController extends Controller
         ];
 
         // Assuming you have an 'admin.dashboard' view for the admin dashboard
-        return view('admin.dashboard', $data);
+        return view('admin.socity.dashboard', $data);
     }
-
-    
 }

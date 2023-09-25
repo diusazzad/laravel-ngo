@@ -10,12 +10,12 @@
 
         <!-- Navigation Menu -->
         <nav class="hidden space-x-4 md:block">
-            <x-home.navlink href="{{ route('home') }}">Home</x-home.navlink>
-            <x-home.navlink href="{{ route('home') }}">About Us</x-home.navlink>
-            <x-home.navlink href="{{ route('home') }}">Programs</x-home.navlink>
-            <x-home.navlink href="{{ route('home') }}">Get Involved</x-home.navlink>
-            <x-home.navlink href="{{ route('login') }}">Login</x-home.navlink>
-            <x-home.donatebutton href="#">Donate</x-home.donatebutton>
+            <x-home.navlink href="{{ route('home') }}" class="font-beautiful">Home</x-home.navlink>
+            <x-home.navlink href="{{ route('home') }}" class="font-beautiful">About Us</x-home.navlink>
+            <x-home.navlink href="{{ route('home') }}" class="font-beautiful">Programs</x-home.navlink>
+            <x-home.navlink href="{{ route('home') }}" class="font-beautiful">Get Involved</x-home.navlink>
+            <x-home.navlink href="{{ route('login') }}" class="font-beautiful">Login</x-home.navlink>
+            <x-home.donatebutton href="#" class="font-beautiful">Donate</x-home.donatebutton>
         </nav>
 
         <!-- Mobile Navigation Menu -->
@@ -33,12 +33,12 @@
                     Close
                 </button>
                 <div class="clear-both">
-                    <x-home.navlink href="#" class="block mb-2 font-semibold">Home</x-home.navlink>
-                    <x-home.navlink href="#" class="block mb-2 font-semibold">About Us</x-home.navlink>
-                    <x-home.navlink href="#" class="block mb-2 font-semibold">Programs</x-home.navlink>
-                    <x-home.navlink href="#" class="block mb-2 font-semibold">Get Involved</x-home.navlink>
-                    <x-home.navlink href="#" class="block mb-2 font-semibold">Contact</x-home.navlink>
-                    <x-home.donatebutton href="#" class="block mt-4">Donate</x-home.donatebutton>
+                    <x-home.navlink href="#" class="block mb-2 font-semibold font-beautiful">Home</x-home.navlink>
+                    <x-home.navlink href="#" class="block mb-2 font-semibold font-beautiful">About Us</x-home.navlink>
+                    <x-home.navlink href="#" class="block mb-2 font-semibold font-beautiful">Programs</x-home.navlink>
+                    <x-home.navlink href="#" class="block mb-2 font-semibold font-beautiful">Get Involved</x-home.navlink>
+                    <x-home.navlink href="#" class="block mb-2 font-semibold font-beautiful">Contact</x-home.navlink>
+                    <x-home.donatebutton href="#" class="block mt-4 font-beautiful">Donate</x-home.donatebutton>
                 </div>
             </div>
         </div>

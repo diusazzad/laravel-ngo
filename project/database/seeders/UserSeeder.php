@@ -15,32 +15,27 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('users')->insert([
-            'name' => 'Superadmin',
-            'email' => 'superadmin@example.com',
-            'password' => Hash::make('password'),
-            'role' => 'superadmin',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Admin',
-            'email' => 'admin@example.com',
-            'password' => Hash::make('password'),
-            'role' => 'admin',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'Editor',
-            'email' => 'editor@example.com',
-            'password' => Hash::make('password'),
-            'role' => 'editor',
-        ]);
-
-        DB::table('users')->insert([
-            'name' => 'User',
-            'email' => 'user@example.com',
-            'password' => Hash::make('password'),
-            'role' => 'user',
+        DB::table('socities')->insert([
+            [
+                'SocietyName' => 'Society 1',
+                'SocietyStartDate' => now(),
+                'SocietyChairman' => 'John Doe',
+                'SocietyManager' => 'Jane Doe',
+                'ContactNumber' => '1234567890',
+                'UserName' => 'user1',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'SocietyName' => 'Society 2',
+                'SocietyStartDate' => now(),
+                'SocietyChairman' => 'Bob Smith',
+                'SocietyManager' => 'Alice Smith',
+                'ContactNumber' => '0987654321',
+                'UserName' => 'user2',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }

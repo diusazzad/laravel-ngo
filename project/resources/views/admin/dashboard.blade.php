@@ -1,17 +1,21 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="flex h-screen bg-gray-200">
     <!-- Sidebar -->
-    <div class="w-64 p-4 bg-white shadow-lg">
+    {{-- <div class="w-64 p-4 bg-white shadow-lg">
         <h2 class="mb-6 text-2xl font-semibold">Admin Panel</h2>
         <ul>
             <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Home</a></li>
-            <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">New
-                    Member</a></li>
-            <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Loan Disburse</a></li>
-            <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Collection/Return</a></li>
-            <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Interest</a></li>
+            <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Society Add</a></li>
+            <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Member Add</a></li>
+            <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Loan Apply</a></li>
+            <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Loan Approval</a></li>
+            <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Loan Collection</a></li>
+            <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Share Collection</a></li>
+            <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Deny To Approve</a></li>
+            <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Withdraw</a></li>
+            <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Report</a></li>
             <li class="mb-2">
                 <a href="{{ route('logout') }}" class="block py-2 text-gray-700 hover:text-blue-500"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
@@ -22,7 +26,7 @@
                 </form>
             </li>
         </ul>
-    </div>
+    </div> --}}
 
     <!-- Main Content -->
     <div class="flex-1 p-10">

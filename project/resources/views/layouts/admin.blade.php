@@ -17,19 +17,23 @@
                 @auth
                 @if(auth()->user()->role == 'admin')
                 <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Home</a></li>
-                <li><a href="{{ route(" members.index") }}"
-                        class="block py-2 text-gray-700 hover:text-blue-500">Employee Add</a></li>
-                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">NGO Calculation</a></li>
-                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Loan Disburse</a></li>
-                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Collection/Return</a></li>
-                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Interest</a></li>
+                <li><a href="{{ route('admin.socity') }}" class="block py-2 text-gray-700 hover:text-blue-500">Society
+                        Add</a></li>
+                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Member Add</a></li>
+                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Loan Apply</a></li>
+                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Loan Approval</a></li>
+                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Loan Collection</a></li>
+                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Share Collection</a></li>
+                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Deny To Approve</a></li>
+                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Withdraw</a></li>
+                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Report</a></li>
                 @elseif(auth()->user()->role == 'user')
                 <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">userpart</a></li>
                 <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">userpart</a></li>
                 <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">userpart</a></li>
                 @endif
                 <li class="mb-2">
-                    <a href="{{ route('logout') }}" class="block px-4 py-2 rounded-lg hover:bg-blue-700"
+                    <a href="{{ route('logout') }}" class="block py-2 text-gray-700 hover:text-blue-500"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         Log Out
                     </a>
