@@ -7,6 +7,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class UserSeeder extends Seeder
 {
@@ -15,24 +16,31 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('socities')->insert([
+        DB::table('users')->insert([
             [
-                'SocietyName' => 'Society 1',
-                'SocietyStartDate' => now(),
-                'SocietyChairman' => 'John Doe',
-                'SocietyManager' => 'Jane Doe',
-                'ContactNumber' => '1234567890',
-                'UserName' => 'user1',
+                'name' => 'John Doe',
+                'email' => 'johndoe@example.com',
+                'password' => Hash::make('password'),
+                'role' => 'superadmin',
+                'remember_token' => Str::random(10),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'SocietyName' => 'Society 2',
-                'SocietyStartDate' => now(),
-                'SocietyChairman' => 'Bob Smith',
-                'SocietyManager' => 'Alice Smith',
-                'ContactNumber' => '0987654321',
-                'UserName' => 'user2',
+                'name' => 'Jane Doe',
+                'email' => 'janedoe@example.com',
+                'password' => Hash::make('password'),
+                'role' => 'admin',
+                'remember_token' => Str::random(10),
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'Bob Smith',
+                'email' => 'bobsmith@example.com',
+                'password' => Hash::make('password'),
+                'role' => 'editor',
+                'remember_token' => Str::random(10),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],

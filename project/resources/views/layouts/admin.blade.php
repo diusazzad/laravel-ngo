@@ -16,7 +16,8 @@
             <ul>
                 @auth
                 @if(auth()->user()->role == 'admin')
-                <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Home</a></li>
+                <li><a href="{{ route('admin.dashboard') }}"
+                        class="block py-2 text-gray-700 hover:text-blue-500">Home</a></li>
                 <li><a href="{{ route('admin.socity') }}" class="block py-2 text-gray-700 hover:text-blue-500">Society
                         Add</a></li>
                 <li><a href="#" class="block py-2 text-gray-700 hover:text-blue-500">Member Add</a></li>
@@ -46,7 +47,7 @@
         </div>
 
         <!-- Main Content -->
-        <div class="flex-1 p-10">
+        <div class=" p-1 m-1 ">
             @yield('content')
         </div>
     </div>

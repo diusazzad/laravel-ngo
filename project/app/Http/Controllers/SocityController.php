@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Socity;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,13 +14,24 @@ class SocityController extends Controller
         // Get the authenticated user
         $user = Auth::user();
 
-        // Add any specific data you want to pass to the view
+        // Fetch data for SocietyID and Username
+        $societies = Socity::all(); // Fetch all societies
+
+        $societyOptions = Socity::pluck('SocietyName', 'SocietyID');
+        $userOptions = User::pluck('name', 'id');
+
+        // Pass the data to the view
         $data = [
             'user' => $user,
-            // Add other data here
+            'societies' => $societies,
+            // Pass the societies data
+            'societyOptions' => $societyOptions,
+            'userOptions' => $userOptions,
         ];
 
-        // Assuming you have an 'admin.dashboard' view for the admin dashboard
+        // Assuming you have an 'admin.socity.dashboard' view for the admin dashboard
         return view('admin.socity.dashboard', $data);
     }
+
+
 }
