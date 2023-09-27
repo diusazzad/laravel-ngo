@@ -2,7 +2,7 @@
     <div class="flex justify-end">
         <button @click="sidebarOpen = !sidebarOpen"
             :class="{'hover:bg-gray-300': !sidebarOpen, 'hover:bg-gray-700': sidebarOpen}"
-            class="w-8 p-1 mx-3 my-2 transition-all duration-300 rounded-full focus:outline-none">
+            class="w-8 p-1 mx-3 my-2 transition-all duration-300 rounded-full hover:animate-pulse focus:outline-none">
             <svg viewBox="0 0 20 20" class="w-6 h-6 fill-current"
                 :class="{'text-gray-600': !sidebarOpen, 'text-gray-300': sidebarOpen}">
                 <path x-show="!sidebarOpen" fill-rule="evenodd"

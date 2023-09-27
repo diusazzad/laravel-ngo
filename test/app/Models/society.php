@@ -9,6 +9,9 @@ class society extends Model
 {
     use HasFactory;
 
+    protected $fillable = 'societies';
+    
+
     public function employees()
     {
         return $this->hasMany(Employee::class);
