@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\AdminController;
 
+use App\Http\Controllers\LoanApplicationController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\SocietyController;
 use App\Http\Controllers\UserController;
@@ -20,6 +21,8 @@ Route::get('/admin', function () {
 
 Route::resource('admin/society', SocietyController::class);
 Route::resource('admin/members', MemberController::class);
+Route::resource('admin/loan-applications', LoanApplicationController::class);
+
 
 
 
