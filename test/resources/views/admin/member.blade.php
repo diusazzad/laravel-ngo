@@ -1,42 +1,53 @@
 @extends('layout.dashboard')
 
 @section('content')
-<div class="p-10">
-    <h2 class="text-lg font-semibold">Add Member</h2>
 
-    <form method="POST" action="">
+    <!-- Display a single member -->
+    <p>{{ $member->name }} - {{ $member->society->name }}</p>
+    <a href="{{ route('members.edit', $member->id) }}">Edit</a>
+    <form action="{{ route('members.destroy', $member->id) }}" method="POST">
         @csrf
-        <div class="mb-4">
-            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-            <input type="text" name="name" id="name" class="form-input rounded-md shadow-sm mt-1 block w-full" required>
-        </div>
-
-        <div class="mb-4">
-            <label for="contact_info" class="block text-gray-700 text-sm font-bold mb-2">Contact Info</label>
-            <input type="text" name="contact_info" id="contact_info"
-                class="form-input rounded-md shadow-sm mt-1 block w-full" required>
-        </div>
-
-        <div class="mb-4">
-            <label for="society_id" class="block text-gray-700 text-sm font-bold mb-2">Society</label>
-            <select name="society_id" id="society_id" class="form-select rounded-md shadow-sm mt-1 block w-full"
-                required>
-                {{-- @foreach($societies as $society) --}}
-                {{-- <option value="{{ $society->id }}">{{ $society->name }}</option> --}}
-                {{-- @endforeach --}}
-            </select>
-        </div>
-
-        <div class="mt-6">
-            <button type="submit" class="btn btn-primary">Add Member</button>
-        </div>
+        @method('DELETE')
+        <button type="submit">Delete</button>
     </form>
 
-    <!-- Display all users -->
-    @foreach ($members as $member)
-    <p>{{ $member->username }}</p>
-    @endforeach
+
+    <a href="{{ route('members.create') }}">Create New Member</a>
+    <!-- Create a new member form -->
+    <form action="{{ route('members.store') }}" method="POST">
+        @csrf
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="contact_info" placeholder="Contact Info" required>
+        <select name="society_id">
+            @foreach ($societies as $society)
+            <option value="{{ $society->id }}">{{ $society->name }}</option>
+            @endforeach
+        </select>
+        <button type="submit">Create Member</button>
+    </form>
+    <!-- Edit member form -->
+    <form action="{{ route('members.update', $member->id) }}" method="POST">
+        @csrf
+        @method('PUT')
+        <input type="text" name="name" value="{{ $member->name }}" required>
+        <input type="text" name="contact_info" value="{{ $member->contact_info }}" required>
+        <select name="society_id">
+            @foreach ($societies as $society)
+            <option value="{{ $society->id }}" {{ $member->society_id == $society->id ? 'selected' : '' }}>{{
+                $society->name }}</option>
+            @endforeach
+        </select>
+        <button type="submit">Update Member</button>
+    </form>
+
+    <!-- Display a single member -->
+    <p>{{ $member->name }} - {{ $member->society->name }}</p>
+    <a href="{{ route('members.edit', $member->id) }}">Edit</a>
+    <form action="{{ route('members.destroy', $member->id) }}" method="POST">
+        @csrf
+        @method('DELETE')
+        <button type="submit">Delete</button>
+    </form>
 
 
-</div>
 @endsection

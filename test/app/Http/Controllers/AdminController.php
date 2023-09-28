@@ -11,8 +11,8 @@ class AdminController extends Controller
 
     public function socityIndex()
     {
-        // $societyIndexs = society::all();
-        return view('admin.society');
+        $societyIndexs = society::all();
+        return view('admin.society', compact('societyIndexs'));
     }
     public function socityCreate()
     {
@@ -85,48 +85,6 @@ class AdminController extends Controller
     // {
     //     return view('admin.member');
     // }
-    public function memberIndex()
-    {
-        $user = Member::all();
-        return view('admin.society', compact('user'));
-    }
-    public function memberCreate()
-    {
-        return view('user.member');
-    }
-    public function memberStore(Request $request)
-    {
-        $data = request()->validate([
-            'username' => 'required|unique:users|max:50',
-            'userpassword' => 'required|max:255',
-            'name' => 'required|max:100',
-            'category' => 'required|max:50',
-        ]);
-        Member::create($data);
-        return redirect()->route('admin.member')->with('success', 'Member Added Successfully');
-    }
 
-    public function memberEdit($id)
-    {
-        $user = Member::find($id);
-        return view('user.member', compact('user'));
-    }
-
-    public function memberUpdate(Request $request, Member $member)
-    {
-        $data = request()->validate([
-            'username' => 'required|max:50',
-            'userpassword' => 'required|max:255',
-            'name' => 'required|max:100',
-            'category' => 'required|max:50',
-        ]);
-        Member::update($data);
-        return redirect()->route('admin.member')->with('success', 'Member Updated Successfully');
-    }
-    public function memberDestroy(Member $member)
-    {
-        $member->delete();
-        return redirect()->route('admin.member.index')->with('success', 'Member Deleted Successfully');
-    }
 
 }

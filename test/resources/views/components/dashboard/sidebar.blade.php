@@ -42,7 +42,7 @@
                     </a>
 
                     <a class="flex items-center px-4 py-3 hover:bg-gray-800 focus:bg-gray-800 hover:text-gray-400 focus:outline-none focus:ring {{ request()->is('dashboard/orders*') ? 'bg-gray-800' : '' }}"
-                        href="{{ route('admin.socity') }}">
+                        href="{{ route('society.index') }}">
                         <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"
                             viewBox="0 0 24 24">
                             <path
@@ -52,7 +52,7 @@
                     </a>
 
                     <a class="flex items-center px-4 py-3 hover:bg-gray-800 focus:bg-gray-800 hover:text-gray-400 focus:outline-none focus:ring"
-                        href="{{ route('admin.member') }}">
+                        href="{{ route('members.index') }}">
                         <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"
                             viewBox="0 0 24 24">
                             <path
@@ -62,7 +62,7 @@
 
                     </a>
                     <a class="flex items-center px-4 py-3 hover:bg-gray-800 focus:bg-gray-800 hover:text-gray-400 focus:outline-none focus:ring"
-                        href="{{ route('admin.loan') }}">
+                        href="">
                         <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"
                             viewBox="0 0 24 24">
                             <path
@@ -72,7 +72,7 @@
 
                     </a>
                     <a class="flex items-center px-4 py-3 hover:bg-gray-800 focus:bg-gray-800 hover:text-gray-400 focus:outline-none focus:ring"
-                        href="{{ route('admin.collection') }}">
+                        href="">
                         <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"
                             viewBox="0 0 24 24">
                             <path
@@ -82,7 +82,7 @@
 
                     </a>
                     <a class="flex items-center px-4 py-3 hover:bg-gray-800 focus:bg-gray-800 hover:text-gray-400 focus:outline-none focus:ring"
-                        href="{{ route('admin.sharecollection') }}">
+                        href="">
                         <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"
                             viewBox="0 0 24 24">
                             <path
@@ -92,7 +92,7 @@
 
                     </a>
                     <a class="flex items-center px-4 py-3 hover:bg-gray-800 focus:bg-gray-800 hover:text-gray-400 focus:outline-none focus:ring"
-                        href="{{ route('admin.denytoapprove') }}">
+                        href="">
                         <svg class="w-5 h-5 fill-current" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1"
                             viewBox="0 0 24 24">
                             <path

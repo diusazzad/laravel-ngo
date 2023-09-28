@@ -9,8 +9,11 @@ class society extends Model
 {
     use HasFactory;
 
-    protected $fillable = 'societies';
-    
+    protected $fillable = ['id', 'name', 'address', 'contact_info'];
+    public $timestamps = false;
+
+
+
 
     public function employees()
     {

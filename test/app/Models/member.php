@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Member extends Model
 {
     use HasFactory;
+    protected $fillable = ['name', 'contact_info', 'society_id'];
+    public $timestamps = false;
     public function society()
     {
         return $this->belongsTo(Society::class);

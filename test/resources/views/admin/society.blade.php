@@ -3,12 +3,7 @@
 @section('content')
 <h2 class="text-lg font-semibold">Create Society</h2>
 
-<!-- Display all societies -->
-{{-- @if (!$societyIndexs->isEmpty())
-    @foreach ($societyIndexs as $societyIndex)
-        <p>{{ $societyIndex->name }}</p>
-    @endforeach
-@endif --}}
+
 
 
 <form method="POST" action="">
@@ -52,16 +47,16 @@
             </tr>
         </thead>
         <tbody>
-            {{-- @foreach($societies as $society) --}}
+            @foreach($societyIndexs as $society)
             <tr>
                 <td class="px-6 py-4 whitespace-no-wrap">
-                    {{-- {{ $society->name }} --}}
+                    {{ $society->name }}
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap">
-                    {{-- {{ $society->address }} --}}
+                    {{ $society->address }}
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap">
-                    {{-- {{ $society->contact_info }} --}}
+                    {{ $society->contact_info }}
                 </td>
                 <td class="px-6 py-4 whitespace-no-wrap text-right text-sm leading-5 font-medium">
                     <a href="" class="text-indigo-600 hover:text-indigo-900">Edit</a>
@@ -72,7 +67,7 @@
                     </form>
                 </td>
             </tr>
-            {{-- @endforeach --}}
+            @endforeach
         </tbody>
     </table>
 </div>
