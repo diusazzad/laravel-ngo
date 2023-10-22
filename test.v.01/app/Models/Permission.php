@@ -15,4 +15,9 @@ class Permission extends Model
     public const UNPUBLISH_ARTICLES = 'unpublish articles';
     public const MANAGE_USERS = 'manage users';
     public const MANAGE_ROLES = 'manage roles';
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class);
+    }
 }

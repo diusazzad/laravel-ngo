@@ -9,6 +9,26 @@ use Spatie\Permission\Models\Role;
 
 class RoleController extends Controller
 {
+    // Function to retrieve the user, role, and permission as an JSON format
+    public function getUserRolePermission()
+    {
+        // Get the current user
+        $user = auth()->user();
+
+        // Get the roles of the user
+        $roles = $user->roles;
+
+        // Get the permissions of the user
+        $permissions = $user->permissions;
+
+        // Return the user, role, and permission information
+        return [
+            'user' => $user,
+            'roles' => $roles,
+            'permissions' => $permissions,
+        ];
+    }
+
     public function createRole(Request $request)
     {
         $role = Role::create(['name' => $request->input('name')]);
