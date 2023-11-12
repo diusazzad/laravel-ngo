@@ -12,32 +12,7 @@ class dashboard extends Controller
         return view('admin.dashboard');
     }
 
-    public function loan_plan(){
-        return view('loan.plan');
-    }
 
-    public function loan_active(){
-        return view('loan.active');
-    }
-    public function loan_pending(){
-        return view('loan.pending');
-    }
-    public function loan_paid(){
-        return view('loan.paid');
-    }
-    public function loan_closed(){
-        return view('loan.closed');
-    }
-    public function loan_all(){
-        return view('loan.all');
-    }
-
-   public function saving_active(){
-        return view('saving.active');
-    }
-   public function saving_pending(){
-        return view('saving.pending');
-    }
 
     public function payment_history(){
         $payments = DB::table('payments')

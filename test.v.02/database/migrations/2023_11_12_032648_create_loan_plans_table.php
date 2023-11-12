@@ -12,12 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('loan_plans', function (Blueprint $table) {
-            $table->id();
-            $table->string('plan_name');
-            $table->decimal('monthly_payment', 10, 2);
-            $table->decimal('loan_amount', 10, 2);
-            $table->decimal('payable_amount', 10, 2);
-            $table->integer('total_installments');
+            $table->increments('id');
+            $table->string('name')->unique();
+            $table->decimal('interest_rate', 5, 2);
             $table->decimal('late_fee', 10, 2);
             $table->timestamps();
         });

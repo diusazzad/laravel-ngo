@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\admin\dashboard;
+use App\Http\Controllers\loanController;
+use App\Http\Controllers\paymentController;
+use App\Http\Controllers\savingController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -13,16 +16,40 @@ Route::get('/', function () {
 
 
 Route::prefix('admin')->group(function () {
-    Route::get('/dashboard',[dashboard::class,'index'])->name('admin.index');
-    Route::get('/dashboard',[dashboard::class,'payment_history'])->name('admin.payment');
 
-    Route::get('/loan/plans',[dashboard::class,'loan_plan'])->name('loan.plans');
-    Route::get('/loan/active',[dashboard::class,'loan_active'])->name('loan.active');
-    Route::get('/loan/pending',[dashboard::class,'loan_pending'])->name('loan.pending');
-    Route::get('/loan/paid',[dashboard::class,'loan_paid'])->name('loan.paid');
-    Route::get('/loan/close',[dashboard::class,'loan_closed'])->name('loan.close');
-    Route::get('/loan/all',[dashboard::class,'loan_all'])->name('loan.all');
+    Route::controller(dashboard::class)->group(function(){
+        Route::get('/dashboard',[dashboard::class,'index'])->name('admin.index');
+        Route::get('/dashboard',[dashboard::class,'payment_history'])->name('admin.payment');
+    });
 
-    Route::get('/saving/active',[dashboard::class,'saving_active'])->name('saving.active');
-    Route::get('/saving/pending',[dashboard::class,'saving_pending'])->name('saving.pending');
+    // loan Section
+    Route::controller(loanController::class)->group(function () {
+        //all routes for loans
+        Route::get('/loan/plans','loanPlan')->name('loan.plans');
+        Route::get('/loan/active','loanActive')->name('loan.active');
+        Route::get('/loan/pending','loanPending')->name('loan.pending');
+        Route::get('/loan/paid','loanPaid')->name('loan.paid');
+        Route::get('/loan/close','loanClosed')->name('loan.close');
+        Route::get('/loan/all','loanAll')->name('loan.all');
+
+      
+    });
+
+    Route::controller(savingController::class)->group(function () {
+
+        Route::get('/saving/plan','savingPlan')->name('saving.plan');
+        Route::get('/saving/pending','savingPending')->name('saving.pending');
+        Route::get('/saving/active','savingActive')->name('saving.active');
+        Route::get('/saving/paid','savingPaid')->name('saving.paid');
+        Route::get('/saving/paid','savingClose')->name('saving.close');
+        Route::get('/saving/all','savingAll')->name('saving.all');
+
+    });
+
+    Route::controller(paymentController::class)->group(function () {
+        Route::get('/payment/all','paymentAll')->name('payment.all');
+        Route::get('/payment/loan','paymentLoan')->name('payment.loan');
+        Route::get('/payment/saving','paymentSaving')->name('payment.saving');
+    });
+
 });

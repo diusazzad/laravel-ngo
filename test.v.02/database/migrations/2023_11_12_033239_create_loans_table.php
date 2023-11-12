@@ -11,13 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('loan_pendings', function (Blueprint $table) {
-            $table->id();
-            $table->string('loan_plan');
+        Schema::create('loans', function (Blueprint $table) {
+            $table->increments('id');
+            $table->unsignedInteger('loan_plan_id');
             $table->decimal('total_payable', 10, 2);
-            $table->date('applied_date');
+            $table->decimal('paid', 10, 2);
             $table->decimal('installment', 10, 2);
+            $table->enum('status', ['plan', 'pending', 'active', 'paid', 'closed']);
             $table->timestamps();
+
+            $table->foreign('loan_plan_id')->references('id')->on('loan_plans');
         });
     }
 
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('loan_pendings');
+        Schema::dropIfExists('loans');
     }
 };

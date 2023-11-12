@@ -7,6 +7,10 @@
 An open-source NGO (Non-Governmental Organization) Management System built with Laravel. This system allows NGOs to manage their operations, donors, beneficiaries, and projects efficiently.
 
 ![NGO Management System Screenshot](docs/screenshot/Screenshot%202023-11-07%20201451.jpg)
+![NGO Management System Screenshot](docs/screenshot/2.jpg)
+![NGO Management System Screenshot](docs/screenshot/3.jpg)
+![NGO Management System Screenshot](docs/screenshot/4.jpg)
+![NGO Management System Screenshot](docs/screenshot/5.jpg)
 
 ## Features
 

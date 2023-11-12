@@ -41,9 +41,11 @@
         href="https://script.viserlab.com/ngolab/assets/admin/css/vendor/bootstrap-pincode-input.css">
 
     <!-- dashdoard main css -->
-    {{-- <link rel="stylesheet" href="https://script.viserlab.com/ngolab/assets/admin/css/app.css"> --}}
+    {{--
+    <link rel="stylesheet" href="https://script.viserlab.com/ngolab/assets/admin/css/app.css"> --}}
 
-    {{-- <link rel="stylesheet" href="https://script.viserlab.com/ngolab/assets/admin/css/custom.css"> --}}
+    {{--
+    <link rel="stylesheet" href="https://script.viserlab.com/ngolab/assets/admin/css/custom.css"> --}}
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
@@ -113,15 +115,13 @@
                             <div class="sidebar-submenu ">
                                 <ul>
                                     <li class="sidebar-menu-item ">
-                                        <a href="https://script.viserlab.com/ngolab/user/savings/plans"
-                                            class="nav-link">
+                                        <a href="{{ route('saving.plan') }}" class="nav-link">
                                             <i class="menu-icon las la-dot-circle"></i>
                                             <span class="menu-title">Apply for savings</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item ">
-                                        <a href="https://script.viserlab.com/ngolab/user/savings/pending"
-                                            class="nav-link">
+                                        <a href="{{ route('saving.pending') }}" class="nav-link">
                                             <i class="menu-icon las la-dot-circle"></i>
                                             <span class="menu-title">Pending</span>
                                         </a>
@@ -133,20 +133,19 @@
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item ">
-                                        <a href="{{ route('loan.pending') }}" class="nav-link">
+                                        <a href="{{ route('loan.paid') }}" class="nav-link">
                                             <i class="menu-icon las la-dot-circle"></i>
                                             <span class="menu-title">Paid</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item ">
-                                        <a href="{{ route('saving.active') }}"
-                                            class="nav-link">
+                                        <a href="{{ route('saving.close') }}" class="nav-link">
                                             <i class="menu-icon las la-dot-circle"></i>
                                             <span class="menu-title">Closed</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item ">
-                                        <a href="{{ route('saving.pending') }}" class="nav-link">
+                                        <a href="{{ route('saving.all') }}" class="nav-link">
                                             <i class="menu-icon las la-dot-circle"></i>
                                             <span class="menu-title">All</span>
                                         </a>
@@ -163,22 +162,19 @@
                             <div class="sidebar-submenu ">
                                 <ul>
                                     <li class="sidebar-menu-item ">
-                                        <a href="https://script.viserlab.com/ngolab/user/payment-history/all"
-                                            class="nav-link">
+                                        <a href="{{ route('payment.all') }}" class="nav-link">
                                             <i class="menu-icon las la-dot-circle"></i>
                                             <span class="menu-title">All</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item ">
-                                        <a href="https://script.viserlab.com/ngolab/user/payment-history/loan"
-                                            class="nav-link">
+                                        <a href="{{ route('payment.loan') }}" class="nav-link">
                                             <i class="menu-icon las la-dot-circle"></i>
                                             <span class="menu-title">Loan</span>
                                         </a>
                                     </li>
                                     <li class="sidebar-menu-item ">
-                                        <a href="https://script.viserlab.com/ngolab/user/payment-history/savings"
-                                            class="nav-link">
+                                        <a href="{{ route('payment.saving') }}" class="nav-link">
                                             <i class="menu-icon las la-dot-circle"></i>
                                             <span class="menu-title">Savings</span>
                                         </a>

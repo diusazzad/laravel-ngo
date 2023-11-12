@@ -6,19 +6,21 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class LoanPlan extends Model
+class LoanStatus extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'interest_rate', 'late_fee'];
+    protected $fillable = ['name'];
 
     /**
-     * Get all of the loans for the LoanPlan
+     * Get all of the comments for the LoanStatus
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function loans(): HasMany
     {
-        return $this->hasMany(loan::class);
+        // return $this->hasMany(Loan::class, 'foreign_key', 'local_key');
+        return $this->hasMany(Loan::class);
     }
+
 }
